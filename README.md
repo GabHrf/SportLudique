@@ -37,9 +37,10 @@ catégories directement sur son interface d’administrateur.
 			- symfony console doctrine:database:create
 			- symfony console make:migration (faite entrer pour répondre yes)
 			- symfony console doctrine:migrations:migrate (faite entrer pour répondre yes) 
-			- symfony server:start (laisser cet invité de commande ouvert pour laisser le serveur allumé)
 	
-		
+	- Ou alors aller sur PhpMyAdmin de votre serveur local et créez une base de données : "sportludique";
+		-Aller sur la section "Importer", puis importer le fichier "sportludique.sql" présent dans le fichier dézipper;
+	- Pour allumer le serveur vous devez faire : symfony server:start (laisser cet invité de commande ouvert pour laisser le serveur allumé)
 	- Vous pouvez vous rendre à l'adresse 127.0.0.1:8000/
 	- Pour accéder au compte admin vous pouvez utiliser les identifiants : admin@sportludique.com
 	                                                                       Administrateur@28
