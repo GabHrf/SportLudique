@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Classe\Mail;
 use App\Entity\User;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -26,6 +27,8 @@ class RegisterController extends AbstractController
      */
     public function index(Request $request, UserPasswordHasherInterface $encoder): Response
     {
+        $notification = null;
+
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
         $form->handleRequest($request);
@@ -33,15 +36,29 @@ class RegisterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $user = $form->getData();
 
-            $password = $encoder->hashPassword($user,$user->getPassword());
-            $user->setPassword($password);
+            $search_email = $this->entityManager->getRepository(User::class)->findOneByEmail($user->getEmail());
 
-            $this->entityManager->persist($user);
-            $this->entityManager->flush();
+            if(!$search_email){
+                $password = $encoder->hashPassword($user,$user->getPassword());
+                $user->setPassword($password);
+
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
+
+                $mail = new Mail();
+                $content = "Bonjour ".$user->getFirstname()."<br/><br/>Bienvenue sur Sport Ludique, nous te remercions pour ton inscription.";
+                $mail->send($user->getEmail(), $user->getFirstname(), 'Bienvenue sur SportLudique', $content);
+
+                $notification = "Vous venez de vous inscrire !";
+
+            }else{
+                $notification = "Le mail existe déjà";
+            }
         }
 
         return $this->render('register/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'notification' =>$notification
         ]);
     }
 }
