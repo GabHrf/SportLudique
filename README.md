@@ -28,10 +28,10 @@ catégories directement sur son interface d’administrateur.
 	- téléchargez l'application au format .zip
 	- Dézippez le fichier;
 	- Ouvrez un invité de commande à la racine du projet pour effectuer la migration de celui-ci et de sa base de données
-	- Tapez les commandes suivantes : symfony console doctrine:database:create
-	                                  symfony console make:migration (faite entrer pour répondre yes)
-                                    symfony console doctrine:migrations:migrate (faite entrer pour répondre yes) 
-                                    symfony server:start (laisser cet invité de commande ouvert pour laisser le serveur allumé)
+	- Tapez les commandes suivantes : 	symfony console doctrine:database:create
+	                                  	symfony console make:migration (faite entrer pour répondre yes)
+                                    		symfony console doctrine:migrations:migrate (faite entrer pour répondre yes) 
+                                    		symfony server:start (laisser cet invité de commande ouvert pour laisser le serveur allumé)
 	- Vous pouvez vous rendre à l'adresse 127.0.0.1:8000/
 	- Pour accéder au compte admin vous pouvez utiliser les identifiants : admin@sportludique.com
 	                                                                       Administrateur@28
