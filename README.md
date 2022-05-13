@@ -17,6 +17,7 @@ catégories directement sur son interface d’administrateur.
 
 - PRE-REQUIS:
 	- Serveur local (WAMP ou XAMPP) avec PhpMyAdmin
+	- Php -v 7.3
 
 - CONTRIBUANTS:
   - Élèves de BTS SIO option SLAM du lycée Fulbert
