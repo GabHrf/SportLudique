@@ -19,6 +19,7 @@ catégories directement sur son interface d’administrateur.
 	- Serveur local (WAMP ou XAMPP) avec PhpMyAdmin
 	- Php -v 7.3.21
 	- Composer
+	- Symfony
 
 - CONTRIBUANTS:
   - Élèves de BTS SIO option SLAM du lycée Fulbert
@@ -29,13 +30,15 @@ catégories directement sur son interface d’administrateur.
 - NOTICE D'INSTALLATION:
 	- téléchargez l'application au format .zip
 	- Dézippez le fichier;
-	- Ouvrez un invité de commande à la racine du projet pour effectuer la migration de celui-ci et de sa base de données
-	- Tapez les commandes suivantes : 
-		- composer install
-		- symfony console doctrine:database:create
-		- symfony console make:migration (faite entrer pour répondre yes)
-		- symfony console doctrine:migrations:migrate (faite entrer pour répondre yes) 
-		- symfony server:start (laisser cet invité de commande ouvert pour laisser le serveur allumé)
+	- 2 choix s'offrent à vous, vous pouvez soit récupérer la base de données vierge avec les commandes suivantes :
+		- Ouvrez un invité de commande à la racine du projet pour effectuer la migration de celui-ci et de sa base de données
+		- Tapez les commandes suivantes : 
+			- composer install
+			- symfony console doctrine:database:create
+			- symfony console make:migration (faite entrer pour répondre yes)
+			- symfony console doctrine:migrations:migrate (faite entrer pour répondre yes) 
+			- symfony server:start (laisser cet invité de commande ouvert pour laisser le serveur allumé)
+	
 		
 	- Vous pouvez vous rendre à l'adresse 127.0.0.1:8000/
 	- Pour accéder au compte admin vous pouvez utiliser les identifiants : admin@sportludique.com
