@@ -17,7 +17,8 @@ catégories directement sur son interface d’administrateur.
 
 - PRE-REQUIS:
 	- Serveur local (WAMP ou XAMPP) avec PhpMyAdmin
-	- Php -v 7.3
+	- Php -v 7.3.21
+	- Composer
 
 - CONTRIBUANTS:
   - Élèves de BTS SIO option SLAM du lycée Fulbert
@@ -30,6 +31,7 @@ catégories directement sur son interface d’administrateur.
 	- Dézippez le fichier;
 	- Ouvrez un invité de commande à la racine du projet pour effectuer la migration de celui-ci et de sa base de données
 	- Tapez les commandes suivantes : 
+		- composer install
 		- symfony console doctrine:database:create
 		- symfony console make:migration (faite entrer pour répondre yes)
 		- symfony console doctrine:migrations:migrate (faite entrer pour répondre yes) 
